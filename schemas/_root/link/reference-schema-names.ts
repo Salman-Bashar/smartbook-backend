@@ -8,4 +8,4 @@
  *
  * TODO: Look for a better way to get array of reference docs.
  */
-export const referenceSchemaNames = ["homePage", "generalPage", "blog"];
+export const referenceSchemaNames = ["homePage", "generalPage", "author"];
