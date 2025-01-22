@@ -1,14 +1,8 @@
-# Sanity Starter Template
+# SmartBook Backend
 
-This is a template repository to kick start sanity based projects.
+This is the backend repository for SmartBook. This is mainly created to work with NextJS front-ends but can be made to work with any frontend with slight adjustments.
 
-> This template is mainly created to work with NextJS frontends but can be made to work with any frontend with slight adjustments.
-
-> This template will receive periodic updates in between projects as we learn better ways to handle sanity.
-
-This template assumes you are an experienced sanity dev. Otherwise please go through the [sanity docs](https://www.sanity.io/docs) to learn how it works.
-
-> Please do not expect existing sanity projects to match the template.
+This codebase assumes you are an experienced sanity dev. Otherwise please go through the [sanity docs](https://www.sanity.io/docs) to learn how it works.
 
 ## Studio Structure
 
@@ -30,20 +24,16 @@ Currently we have the following folders for storing schemas:
 
   You can think of an **entity** as a class.
 
-  An example of an entity is a `blog`. This will contain all instances of the different blogs of a site.
+  An example of an entity is a `book`. This will contain all instances of the different books of our site.
 
-  Another common entity could be `testimonial`. This will contain all instances of testimonials we are rendering on the site.
+  Another common entity could be `category`. This will contain all instances of book categories we are rendering on the site.
 
   The entities are referenced in multiple places across a project, for example they can be referenced in buildable sections.
 
-  Entities can also have their own pages, for example an instance of `blog` will have a page.
-
-- **Miscellaneous**: This will contain schemas that don't really fit into our other folders.
-
-  For example a schema to contain `blog tags` can be stored in this folder.
+  Entities can also have their own pages, for example an instance of `book` will have a page.
 
 > You can checkout out how the studio structure is managed by looking through the `structure` folder.
-> Additionally you will come across the use of funcitons like `createSingleDocumentStructure`. We go more into detail about these funcitons in the [Document Structure](#single-document-structure-vs-dynamic-document-structure) section.
+> Additionally you will come across the use of functions like `createSingleDocumentStructure`. We go more into detail about these functions in the [Document Structure](#single-document-structure-vs-dynamic-document-structure) section.
 
 # Root and Common schemas
 
@@ -77,7 +67,7 @@ The contents of the `common` folder will change from project to project and as a
 
 # Studio Configuration
 
-We can use plugins to customize the look and feel of the Santiy studio.
+We can use plugins to customize the look and feel of the Sanity studio.
 
 Sanity studio is configured using the `sanity.config.ts` file.
 
@@ -87,7 +77,7 @@ This file exports and array of **config** objects.
 
 ## Plugins
 
-The config object has a `plugins` property. This accepts an array of valid plugins that add new features or modify existing features of the santiy studio.
+The config object has a `plugins` property. This accepts an array of valid plugins that add new features or modify existing features of the sanity studio.
 
 We use a number of official/community sanity plugins in our studio, you can learn more about them by checking the config file.
 
@@ -154,10 +144,10 @@ In sanity there are some documents for which we only want a single instance, suc
 - Global Settings
 - Home Page
 
-Normally it would not make sense to be able to create and maintain more than one instance of a home page. Depending on your project you will have more documents that must be a single instace.
+Normally it would not make sense to be able to create and maintain more than one instance of a home page. Depending on your project you will have more documents that must be a single instance.
 
 For documents like this we use the `createSingleDocumentStructure` when we are adding those documents to our studio.
 
-> IMPORTANT: Along with using this function you also have to limit the `create` and `delete` funcitonality of these documents. It would not make sense to be able to delete a home page. Checkout the [Document Actions](#document-actions) section for more information.
+> IMPORTANT: Along with using this function you also have to limit the `create` and `delete` functionality of these documents. It would not make sense to be able to delete a home page. Checkout the [Document Actions](#document-actions) section for more information.
 
 For other documents that can have multiple instances we use the `createDynamicDocumentStructure` function.
