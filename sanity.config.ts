@@ -1,5 +1,4 @@
 import { defineConfig } from "sanity";
-import { codeInput } from "@sanity/code-input";
 import { colorInput } from "@sanity/color-input";
 import { visionTool } from "@sanity/vision";
 import { media } from "sanity-plugin-media";
@@ -10,16 +9,9 @@ import {
   modifyNewDocumentOptions,
 } from "./document-config";
 import { customDesktool } from "./plugins/custom-desktool";
-import { Brand } from "./components/brand-icon";
-import { imageHotspotArrayPlugin } from "sanity-plugin-hotspot-array";
+import { GiBookAura } from "react-icons/gi";
 
-const commonPlugins = [
-  codeInput(),
-  visionTool(),
-  colorInput(),
-  media(),
-  imageHotspotArrayPlugin(),
-];
+const commonPlugins = [visionTool(), colorInput(), media()];
 const commonConfig = {
   schema: {
     types: schemaTypes,
@@ -29,14 +21,11 @@ const commonConfig = {
 export default defineConfig([
   {
     name: "production-workspace",
-    title: "Producion Workspace",
+    title: "Production Workspace",
     projectId: import.meta.env.SANITY_STUDIO_PROJECT_ID,
     dataset: "production",
-    icon: Brand,
-    plugins: [
-      customDesktool("Starter: Production", "production"),
-      ...commonPlugins,
-    ],
+    icon: GiBookAura,
+    plugins: [customDesktool("SmartBook", "production"), ...commonPlugins],
     document: {
       actions: (prev, context) => {
         return modifyDocumentActions(prev, context);
@@ -51,24 +40,4 @@ export default defineConfig([
     basePath: "/production",
     ...commonConfig,
   },
-  // {
-  //   name: "development-workspace",
-  //   title: "Development Workspace",
-  //   projectId: import.meta.env.SANITY_STUDIO_PROJECT_ID,
-  //   dataset: "development",
-  //   plugins: [
-  //     commonDesktoolSetup("Starter: Development", "development"),
-  //     ...commonPlugins,
-  //   ],
-  //   document: {
-  //     actions: (prev, context) => {
-  //       return modifyDocumentActions(prev, context);
-  //     },
-  //     productionUrl: async (prev, context) => {
-  //       return resolveProductionUrl(prev, context, "development");
-  //     },
-  //   },
-  //   basePath: "/development",
-  //   ...commonConfig,
-  // },
 ]);
