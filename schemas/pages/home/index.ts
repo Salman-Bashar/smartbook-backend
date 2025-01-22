@@ -1,31 +1,24 @@
 import { defineType } from "sanity";
-import { seo, seoGroup } from "../../_root/seo";
+import { seo } from "../../_root/seo";
 import { sectionsField } from "../../common/sections";
 import { CgWebsite } from "react-icons/cg";
 import { heroField } from "../../common/hero";
-import { SiSanity } from "react-icons/si";
+import { contentGroup, seoGroup } from "../../common/field-groups";
 
 export default defineType({
   name: "homePage",
   type: "document",
   title: "Home",
   icon: CgWebsite,
-  groups: [
-    seoGroup,
-    {
-      name: "content",
-      title: "Content",
-      icon: SiSanity,
-    },
-  ],
+  groups: [seoGroup, contentGroup],
   fields: [
     seo({
       slugOptions: { isFixed: true },
       group: "seo",
       renderTitleInput: true,
     }),
-    heroField({ group: "content", required: true }),
-    sectionsField({ group: "content" }),
+    heroField({ group: [contentGroup.name], required: true }),
+    sectionsField({ group: [contentGroup.name] }),
   ],
   preview: {
     select: {

@@ -4,8 +4,8 @@ import { defineField, ObjectRule, StringRule } from "sanity";
 import { openGraph } from "./open-graph";
 import { otherSeoData } from "./other";
 import { link } from "../link";
-import { FaGlobe } from "react-icons/fa";
 import { seoConfigFields } from "../seo-config-fields";
+import { seoGroup } from "../../common/field-groups";
 
 interface SEOInputArgs {
   slugOptions: ISanitySlug;
@@ -115,13 +115,3 @@ export function seo(args: SEOInputArgs) {
 
   return seoField;
 }
-
-/**
- * This should be used with creating the field group for seo. It will
- * help maintain concistency across the studio.
- */
-export const seoGroup = {
-  name: "seo",
-  title: "SEO",
-  icon: FaGlobe,
-};
