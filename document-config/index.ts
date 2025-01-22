@@ -17,8 +17,8 @@ export function modifyDocumentActions(
   context: DocumentActionsContext
 ) {
   if (fixedSchemaNames.includes(context.schemaType)) {
-    return prev.filter((orginalAction: DocumentActionComponent) => {
-      const action = orginalAction.action;
+    return prev.filter((originalAction: DocumentActionComponent) => {
+      const action = originalAction.action;
       if (action) {
         return !["delete", "duplicate", "unpublish"].includes(action);
       }
