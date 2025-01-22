@@ -2,11 +2,8 @@ import { IWorkspace } from "./types";
 
 export function getBaseUrl(workspace: IWorkspace) {
   switch (workspace) {
-    case "development": {
-      return import.meta.env.SANITY_STUDIO_PREVIEW_URL_DEVELOP;
-    }
     case "production": {
-      return import.meta.env.SANITY_STUDIO_PREVIEW_URL_PRODUCTION;
+      return import.meta.env.SANITY_STUDIO_PREVIEW_URL;
     }
     default: {
       const exhaustiveCheck: never = workspace;

@@ -5,4 +5,4 @@
  * This is mainly used by sanity.config functions to generate the correct
  * preview url based on the workspace.
  */
-export type IWorkspace = "production" | "development";
+export type IWorkspace = "production";
