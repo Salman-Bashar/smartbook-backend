@@ -23,7 +23,7 @@ export default defineType({
       group: [contentGroup.name],
     }),
     seo({
-      slugOptions: { source: "title", isFixed: false, prefix: "authors" },
+      slugOptions: { source: "fullName", isFixed: false, prefix: "authors" },
       group: "seo",
       renderTitleInput: false,
     }),
