@@ -2,8 +2,11 @@
 import generalPages from "./pages/general";
 import homePage from "./pages/home";
 
-// Entities
-import blog from "./entities/blog";
+// Entities (Page Types)
+import author from "./entities/author";
+
+// Entities (Non-Page Types)
+import category from "./entities/category";
 
 // General Sections
 import faqSection from "./buildable-sections/faq";
@@ -22,11 +25,6 @@ import footer from "./layout/footer";
 // Global Settings
 import globalSettings from "./global-settings";
 
-// Examples
-// TODO: Remove these before production
-import product from "./examples/product";
-import productHotspotCarousel from "./examples/product-hotspot-carousel";
-
 /**
  * Keep schemas in the correct category of arrays.
  * This will make it easier to manage the studio layout
@@ -42,11 +40,7 @@ import productHotspotCarousel from "./examples/product-hotspot-carousel";
 export const globalSchemas = [globalSettings];
 export const dynamicPages = [generalPages];
 export const fixedPages = [homePage];
-export const buildableSections = [
-  faqSection,
-  richTextSection,
-  productHotspotCarousel,
-];
+export const buildableSections = [faqSection, richTextSection];
 export const buildableHeroSections = [primaryHero];
 export const layouts = [header, footer];
 
@@ -56,8 +50,8 @@ export const layouts = [header, footer];
  * The entities placed in `entitiesWthPages` will have a
  * preview option.
  */
-export const entitiesWthPages = [blog];
-export const entitiesWithoutPages = [product];
+export const entitiesWthPages = [author];
+export const entitiesWithoutPages = [category];
 
 /**
  * Some documents are only created as tools, to be reused in other documents.
