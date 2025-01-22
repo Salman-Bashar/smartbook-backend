@@ -1,5 +1,4 @@
 import { defineField } from "sanity";
-import { schemaMarkupDefinitions } from "../../schema-markup-definitions";
 
 export const otherSeoData = defineField({
   name: "others",
@@ -15,6 +14,5 @@ export const otherSeoData = defineField({
         layout: "tags",
       },
     }),
-    defineField(schemaMarkupDefinitions({})),
   ],
 });

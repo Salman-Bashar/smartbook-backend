@@ -1,5 +1,6 @@
 import { defineField } from "sanity";
 import { seoConfigFields } from "../../_root/seo-config-fields";
+import { seoGroup } from "../../common/field-groups";
 
 export const globalSeoField = defineField({
   name: "globalSeo",
@@ -11,5 +12,5 @@ export const globalSeoField = defineField({
   validation(rule) {
     return rule.required();
   },
-  group: "seo",
+  group: [seoGroup.name],
 });

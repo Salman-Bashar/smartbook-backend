@@ -2,7 +2,6 @@ import { ArrayDefinition, defineArrayMember, defineField } from "sanity";
 import { image } from "../media/image";
 import { video } from "../media/video";
 import { block } from "./block";
-import { code } from "./code";
 import { portableTextIframe } from "./iframe";
 
 interface Args {
@@ -32,7 +31,6 @@ export function portableText({
         })
       ),
       defineArrayMember(video({ name: "portableTextVideo", title: "Video" })),
-      defineArrayMember(code),
       defineArrayMember(portableTextIframe),
     ],
     validation: (rule) =>

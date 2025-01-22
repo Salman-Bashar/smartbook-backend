@@ -1,8 +1,7 @@
 import { defineType } from "sanity";
 import { FiSettings } from "react-icons/fi";
-import { FaCode, FaGlobe } from "react-icons/fa";
-import { schemaMarkupDefinitions } from "../_root/schema-markup-definitions";
 import { globalSeoField } from "./global-seo";
+import { seoGroup } from "../common/field-groups";
 
 /**
  * This document will hold all kinds of global settings data.
@@ -16,23 +15,8 @@ export default defineType({
   title: "Global Settings",
   type: "document",
   icon: FiSettings,
-  groups: [
-    {
-      name: "seo",
-      title: "SEO",
-      icon: FaGlobe,
-      default: true,
-    },
-    {
-      name: "schemaMarkupDefinitions",
-      title: "Schema Markup Definitions",
-      icon: FaCode,
-    },
-  ],
-  fields: [
-    globalSeoField,
-    schemaMarkupDefinitions({ group: "schemaMarkupDefinitions" }),
-  ],
+  groups: [seoGroup],
+  fields: [globalSeoField],
   preview: {
     prepare() {
       return {
