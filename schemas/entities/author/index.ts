@@ -12,26 +12,27 @@ export default defineType({
   icon: BsPersonBoundingBox,
   groups: [seoGroup, contentGroup],
   fields: [
+    seo({
+      slugOptions: { source: "_id", isFixed: false, prefix: "authors" },
+      group: "seo",
+      renderTitleInput: false,
+    }),
     defineField({
       name: "fullName",
       title: "Fullname",
       type: "string",
-      description:
-        "The fullname of the author. This is used to generate the slug.",
+      description: "The fullname of the author",
       validation: (rule: StringRule) =>
         rule.required().error("Please provide the fullname."),
       group: [contentGroup.name],
     }),
-    seo({
-      slugOptions: { source: "fullName", isFixed: false, prefix: "authors" },
-      group: "seo",
-      renderTitleInput: false,
-    }),
-    defineField(image({ name: "avatar", title: "Avatar", group: "content" })),
+    defineField(
+      image({ name: "avatar", title: "Avatar", group: [contentGroup.name] })
+    ),
     defineField(
       portableText({
-        name: "fullDescription",
-        title: "Full Description",
+        name: "about",
+        title: "About",
         isRequired: true,
         group: [contentGroup.name],
       })
