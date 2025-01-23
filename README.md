@@ -14,7 +14,7 @@ Currently we have the following folders for storing schemas:
 
   Currently we only have SEO controls.
 
-  A sanity setup for an ecommerce site might store **promotions** related content in the global settings folder.
+  A sanity setup for an e-commerce site might store **promotions** related content in the global settings folder.
 
 - **Layout**: This will store all the content we render in the layout (header/footer) of the frontend.
 - **Pages**: This will contain all the **buildable** pages.
