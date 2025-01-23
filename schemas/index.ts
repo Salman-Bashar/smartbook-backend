@@ -6,7 +6,7 @@ import homePage from "./pages/home";
 import author from "./entities/author";
 
 // Entities (Non-Page Types)
-import category from "./entities/category";
+import user from "./entities/user";
 
 // General Sections
 import faqSection from "./buildable-sections/faq";
@@ -20,7 +20,7 @@ import header from "./layout/header";
 import footer from "./layout/footer";
 
 // Miscellaneous
-// TODO: Import Miscellaneous schemas here
+import category from "./entities/category";
 
 // Global Settings
 import globalSettings from "./global-settings";
@@ -51,14 +51,14 @@ export const layouts = [header, footer];
  * preview option.
  */
 export const entitiesWthPages = [author];
-export const entitiesWithoutPages = [category];
+export const entitiesWithoutPages = [user];
 
 /**
  * Some documents are only created as tools, to be reused in other documents.
  * They cannot be classified as entities, so we place them here.
  * The schemas used here should be kept in a `miscellaneous` folder.
  */
-export const miscellaneous = [];
+export const miscellaneous = [category];
 
 /**
  * Export schema types.

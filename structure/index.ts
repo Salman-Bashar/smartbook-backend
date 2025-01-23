@@ -5,6 +5,7 @@ import buildableSectionsStructure from "./buildable-sections";
 import buildableHeroSectionsStructure from "./buildable-hero-sections";
 import layoutsStructure from "./layouts";
 import globalSchemasStructure from "./global-schemas";
+import miscellaneousStructure from "./miscellaneous";
 
 /**
  * This function is responsible for controlling the studio structure.
@@ -22,5 +23,7 @@ export default function structuredItems(S: StructureBuilder) {
     buildableSectionsStructure(S),
     S.divider(),
     entitiesStructure(S),
+    S.divider(),
+    miscellaneousStructure(S),
   ];
 }
