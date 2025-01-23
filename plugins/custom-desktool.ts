@@ -38,7 +38,7 @@ export function customDesktool(title: string, workspace: IWorkspace) {
     },
     structure: (S) =>
       S.list()
-        .title(title)
+        .id(title)
         .items([...structuredItems(S)]),
   });
 }

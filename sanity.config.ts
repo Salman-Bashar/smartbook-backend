@@ -21,7 +21,7 @@ const commonConfig = {
 export default defineConfig([
   {
     name: "production-workspace",
-    title: "Production Workspace",
+    title: "SmartBook",
     projectId: import.meta.env.SANITY_STUDIO_PROJECT_ID,
     dataset: "production",
     icon: GiBookAura,
