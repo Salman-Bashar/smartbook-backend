@@ -40,9 +40,12 @@ export default defineType({
         defineArrayMember({ type: "reference", to: [{ type: "category" }] }),
       ],
     }),
-
-    // ToDO: Add field - library
-
+    defineField({
+      name: "library",
+      title: "Library",
+      type: "array",
+      of: [defineArrayMember({ type: "reference", to: [{ type: "book" }] })],
+    }),
     defineField({
       name: "points",
       title: "Points",
