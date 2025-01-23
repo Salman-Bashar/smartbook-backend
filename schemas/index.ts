@@ -4,6 +4,7 @@ import homePage from "./pages/home";
 
 // Entities (Page Types)
 import author from "./entities/author";
+import book from "./entities/book";
 
 // Entities (Non-Page Types)
 import user from "./entities/user";
@@ -50,7 +51,7 @@ export const layouts = [header, footer];
  * The entities placed in `entitiesWthPages` will have a
  * preview option.
  */
-export const entitiesWthPages = [author];
+export const entitiesWthPages = [author, book];
 export const entitiesWithoutPages = [user];
 
 /**
